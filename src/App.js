@@ -12,6 +12,7 @@ import TermsAndCondition from "./allComponents/Terms/index";
 import Payment from "./allComponents/Payment/payment";
 import Method from "./allComponents/Payment/method";
 import Profile from "./allComponents/Profile/index";
+import Home from "./pages/Home";
 
 
 
@@ -20,8 +21,9 @@ function App() {
   return (
       <Router>
         <Routes>
-         <Route exact path="/" element={<SignIn/>} />
-         <Route exact path="/signUp" element={<SignUp/>} />
+        <Route exact path="/" element={<Home/>} />
+         <Route exact path="/login" element={<SignIn/>} />
+         <Route exact path="/signup" element={<SignUp/>} />
          <Route exact path="/termsAndCondition" element={ <TermsAndCondition />} />
          <Route exact path="/invite" element={ <Invite />} />
          <Route exact path="/payment" element={ <Payment/>} />
