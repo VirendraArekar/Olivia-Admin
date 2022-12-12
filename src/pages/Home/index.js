@@ -7,7 +7,9 @@ import RegisterImg from "../../assets/images/register.png"
 import MemberImg from "../../assets/images/member.png"
 import LangImg from "../../assets/images/lang.png"
 import QueImg from "../../assets/images/que.png"
+import WeImg from "../../assets/images/we.png"
 import {RiNumber1, RiNumber2, RiNumber3, RiNumber4, RiNumber5} from "react-icons/ri"
+import {HiOutlineLightBulb} from 'react-icons/hi'
 import { useState } from "react";
 
 const Home = (props) => {
@@ -133,9 +135,55 @@ const Home = (props) => {
             </div>
 
 
-            <div className="text-center">
+            <div className="text-center mb-24">
                <Button title="Start the Quiz" />
             </div>
+
+
+
+            <div className="align-middle bg-[#dce3f0] py-8 px-10">
+               <h3 className="text-3xl text-center py-4 text-[#1e2c48]">Who we are</h3>
+                <div className="grid grid-cols-2 pt-4">
+                    <div className="align-middle">
+                        <img src={WeImg} />
+                    </div>
+                    <div className="align-middle py-12 mx-8">
+                        <h3 className="text-4xl py-4 text-[#1e2c48]">Who help to increase your Knowledge</h3>
+                        <p className="flex w-100 my-2">
+                            <div className=" text-gray-500">
+                            Donec sed erat ut magna suscipit mattis. Aliquam erat<br></br> volutpat. Morbi in orci risus. Donec pretium fringilla<br></br> blandit. Etiam ut accumsan leo. Aliquam id mi quam.<br></br> Vivamus dictum ut erat nec congue. Etiam facilisis<br></br> lacus ut arcu vulputate, non pellentesque sem convallis.<br></br> Proin tempus sapien nisl, nec varius risus tristique a.<br></br> Etiam ligula lacus, ultricies at cursus id, fringilla ne
+                            </div>
+                        </p>
+                        <div className="grid grid-cols-12 align-middle mt-6">
+                            <div className="text-start col-span-1 py-3">
+                                <span className="rounded-full bg-[#1e2c48] inline-block p-2 mb-8">
+                                    <HiOutlineLightBulb className="text-xl text-white"/>
+                                </span>
+                                
+                            </div>
+                            <div className="col-span-11">
+                                <div className="text-lg">Loren Ipsum</div>
+                                <p className="text-gray-500 ">Donec sed erat ut magna suscipit mattis. Aliquam<br></br> erat volutpat. </p>
+                            </div>
+                        </div>
+                        <div className="grid grid-cols-12 align-middle">
+                            <div className="text-start col-span-1 py-3">
+                                <span className="rounded-full bg-[#1e2c48] inline-block p-2 mb-8">
+                                    <HiOutlineLightBulb className="text-xl text-white"/>
+                                </span>
+                                
+                            </div>
+                            <div className="col-span-11">
+                                <div className="text-lg">Loren Ipsum</div>
+                                <p className="text-gray-500 ">Donec sed erat ut magna suscipit mattis. Aliquam<br></br> erat volutpat. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
             
         </Skeleton>
     )
