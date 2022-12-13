@@ -7,11 +7,11 @@ import PrivateRoutes from "./route/PrivateRoutes";
 import Protect from "./pages/Protect/index.js";
 import SignIn from "./layouts/SignInLayout";
 import SignUp from "./layouts/SignUpLayout";
-import Invite from "./allComponents/Invite";
-import TermsAndCondition from "./allComponents/Terms/index";
-import Payment from "./allComponents/Payment/payment";
-import Method from "./allComponents/Payment/method";
-import Profile from "./allComponents/Profile/index";
+import Invite from "./pages/Invite";
+import TermsAndCondition from "./pages/Terms/index";
+import Payment from "./pages/Payment/payment";
+import Method from "./pages/Payment/method";
+import Profile from "./pages/Profile/index";
 import Home from "./pages/Home";
 
 

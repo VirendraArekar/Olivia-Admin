@@ -8,8 +8,11 @@ import MemberImg from "../../assets/images/member.png"
 import LangImg from "../../assets/images/lang.png"
 import QueImg from "../../assets/images/que.png"
 import WeImg from "../../assets/images/we.png"
+import OrnamentImg from '../../assets/images/Ornament.png'
+import EllipseImg from '../../assets/images/Ellipse.png'
 import {RiNumber1, RiNumber2, RiNumber3, RiNumber4, RiNumber5} from "react-icons/ri"
 import {HiOutlineLightBulb} from 'react-icons/hi'
+import {BsChevronLeft, BsChevronRight} from 'react-icons/bs'
 import { useState } from "react";
 
 const Home = (props) => {
@@ -30,7 +33,7 @@ const Home = (props) => {
                   <Button title="Start The Quiz" />
                </div>
                <div className="align-middle">
-                 <img src={HomeImg} />
+                 <img src={HomeImg}/>
                </div>
             </div>
 
@@ -183,8 +186,33 @@ const Home = (props) => {
             </div>
 
 
-
-            
+            <div className="">
+                 <h4 className="text-3xl text-center py-16 text-[#1e2c48] font-bold">Here is what our Clients are saying About us</h4>
+                 <div className="w-100">
+                    <div className="relative w-2/5 grid mx-auto">
+                        <div className="h-80 align-middle">
+                            <BsChevronLeft className="font-bold text-5xl absolute -left-16 cursor-pointer my-28"/>
+                            <BsChevronRight className="font-bold text-5xl absolute -right-16 cursor-pointer my-28"/>
+                            <img src={OrnamentImg} alt="ornament" className="w-28 absolute top-0 right-0"/>
+                            <img src={OrnamentImg} alt="ornament" className="w-28 absolute left-0 bottom-32"/>
+                        </div>
+                        <div className="absolute top-10 left-10 right-10 shadow-2xl h-60 bg-white p-4">
+                          <h3 className="text-xl text-center font-bold py-4">It was very good experience</h3>
+                          <p className="mx-8">
+                          Oliva Ministries have a very good Quiz system, Great and simple Website to understand and My knowledge has increased a lot from this. I will definitely recommend you to play their Quiz and you will get rewards & high knowledge.
+                          </p>
+                        </div>
+                        <div className="flex mx-24 align-middle">
+                           <img src={EllipseImg} className="w-14 h-14 rounded-full inline-block mx-2 my-4"/>
+                           <img src={EllipseImg} className="w-14 h-14 rounded-full inline-block  mx-2 my-4"/>
+                           <img src={EllipseImg} className="w-20 h-20 rounded-full inline-block  mx-2"/>
+                           <img src={EllipseImg} className="w-14 h-14 rounded-full inline-block  mx-2 my-4"/>
+                           <img src={EllipseImg} className="w-14 h-14 rounded-full inline-block  mx-2 my-4"/>
+                        </div>
+                        <h3 className="text-center font-bolder text-md">John Martin</h3>
+                    </div>
+                 </div>
+            </div>
         </Skeleton>
     )
 }
