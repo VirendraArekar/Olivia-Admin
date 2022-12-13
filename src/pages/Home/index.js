@@ -306,7 +306,7 @@ const Home = (props) => {
                                             <div class="grid grid-cols-4 gap-12 content-center mx-24 my-12">
                                                 {
                                                     languages.map((item, index) => (
-                                                        <div className={`${item.checked ? 'bg-gray-800' : 'bg-[#E0E0E0]'} p-1 cursor-pointer`} onClick={() => selectLanguage(item.id)}>
+                                                        <div className={`${item.checked ? 'bg-gray-600' : 'bg-[#E0E0E0]'} p-1 cursor-pointer`} onClick={() => selectLanguage(item.id)}>
                                                             <h5 className={`text-lg text-center ${item.checked ? 'text-white' : ''}`}>{item.name}</h5>
                                                         </div>
                                                     ))
