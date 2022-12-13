@@ -9,12 +9,12 @@ export default function Button(props){
          {
             element === 'button' ?
             <button className={`${!inverse ? 'text-white' : 'text-blue-800'} border border-blue-800 text-sm rounded 
-                            ${size} ${!inverse ? bgColor : 'bg[#FFFFFF]'} ${shadow} ${className}` } type={type} >
+                            ${size} ${!inverse ? bgColor : 'bg[#FFFFFF]'} ${shadow} ${className}` } type={type} {...props}>
             {title}
             </button>
             :
             <Link to={to} className={`${!inverse ? 'text-white' : 'text-blue-800'} border border-blue-800 text-sm rounded 
-                            ${size} ${!inverse ? bgColor : 'bg[#FFFFFF]'} ${shadow} ${className}` } type={type} >
+                            ${size} ${!inverse ? bgColor : 'bg[#FFFFFF]'} ${shadow} ${className}` } type={type} {...props}>
             {title}
             </Link>
          }

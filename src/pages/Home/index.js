@@ -14,10 +14,35 @@ import {RiNumber1, RiNumber2, RiNumber3, RiNumber4, RiNumber5} from "react-icons
 import {HiOutlineLightBulb} from 'react-icons/hi'
 import {BsChevronLeft, BsChevronRight} from 'react-icons/bs'
 import Right from "../../assets/images/right.png"
-import { useState } from "react";
+import { useState, Fragment, useRef} from "react";
+import { ExclamationTriangleIcon } from '@heroicons/react/24/outline'
+import { Dialog, Transition } from '@headlessui/react'
 
 const Home = (props) => {
     const [load, setLoad] = useState(false)
+    const [open, setOpen] = useState(false)
+    const cancelButtonRef = useRef(null)
+
+    const [languages, setLanguages] = useState([
+     { id  : 1, name : 'English', checked : false},
+     {  id  : 2, name : 'తెలుగు', checked : false},
+     {  id  : 3, name : 'தமிழ்', checked : false},
+     {  id  : 4, name : 'ಕನ್ನಡ', checked : false}
+    ])
+
+    const selectLanguage = (id) => {
+        setLanguages(current =>
+            current.map(obj => {
+                if (obj.id === id) {
+                return {...obj, checked : true};
+                }
+                else{
+                return {...obj, checked : false};
+                }
+            }),
+        );
+    }
+
     return(
         <Skeleton>
             <Loader loader={load} />
@@ -31,7 +56,7 @@ const Home = (props) => {
                   <p className="flex w-100 border-l-2 border-l-gray-800 my-12">
                     <div className="p-1 text-gray-500">We help you to prepare for more Bible quizes</div>
                   </p>
-                  <Button title="Start The Quiz" />
+                  <Button title="Start The Quiz" onClick={() => {setOpen(true)}}/>
                </div>
                <div className="align-middle">
                  <img src={HomeImg}/>
@@ -243,6 +268,64 @@ const Home = (props) => {
                     </div>
                 </div>
             </div>
+
+
+            <Transition.Root show={open} as={Fragment}>
+                    <Dialog as="div" className="relative z-10" initialFocus={cancelButtonRef} onClose={setOpen}>
+                        <Transition.Child
+                        as={Fragment}
+                        enter="ease-out duration-300"
+                        enterFrom="opacity-0"
+                        enterTo="opacity-100"
+                        leave="ease-in duration-200"
+                        leaveFrom="opacity-100"
+                        leaveTo="opacity-0"
+                        >
+                        <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
+                        </Transition.Child>
+
+                        <div className="fixed inset-0 z-10 overflow-y-auto">
+                        <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+                            <Transition.Child
+                            as={Fragment}
+                            enter="ease-out duration-300"
+                            enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                            enterTo="opacity-100 translate-y-0 sm:scale-100"
+                            leave="ease-in duration-200"
+                            leaveFrom="opacity-100 translate-y-0 sm:scale-100"
+                            leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                            >
+                            <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 w-3/4">
+                                <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                                    <div className="p-16">
+                                        <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                                            <h3 className="text-4xl text-center">Choose your Language</h3>
+                                            <p className="text-sm text-gray-500 text-center py-12">
+                                                Select your preferred language to Start the Quiz
+                                            </p>
+                                            <div class="grid grid-cols-4 gap-12 content-center mx-24 my-12">
+                                                {
+                                                    languages.map((item, index) => (
+                                                        <div className={`${item.checked ? 'bg-gray-800' : 'bg-[#E0E0E0]'} p-1 cursor-pointer`} onClick={() => selectLanguage(item.id)}>
+                                                            <h5 className={`text-lg text-center ${item.checked ? 'text-white' : ''}`}>{item.name}</h5>
+                                                        </div>
+                                                    ))
+                                                }
+                                               
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className=" pb-10 px-12 sm:flex sm:flex-row-reverse">
+                                 <Button title="Start Quiz" />
+                                
+                                </div>
+                            </Dialog.Panel>
+                            </Transition.Child>
+                        </div>
+                        </div>
+                    </Dialog>
+                    </Transition.Root>
         </Skeleton>
     )
 }
