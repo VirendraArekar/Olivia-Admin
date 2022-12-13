@@ -317,7 +317,7 @@ const Home = (props) => {
                                     </div>
                                 </div>
                                 <div className=" pb-10 px-12 sm:flex sm:flex-row-reverse">
-                                 <Button title="Start Quiz" />
+                                 <Button title="Start Quiz" element="link" to="/quiz"/>
                                 
                                 </div>
                             </Dialog.Panel>

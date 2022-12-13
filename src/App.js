@@ -13,6 +13,7 @@ import Payment from "./pages/Payment/payment";
 import Method from "./pages/Payment/method";
 import Profile from "./pages/Profile/index";
 import Home from "./pages/Home";
+import Question from "./pages/Question";
 
 
 
@@ -29,6 +30,7 @@ function App() {
          <Route exact path="/payment" element={ <Payment/>} />
          <Route exact path="/paymentmethod" element={ <Method/>} />
          <Route exact path="/profile" element={ <Profile/>} />
+         <Route exact path="/quiz" element={ <Question/>} />
          {/* <Route element={<PrivateRoutes />}> */}
           {/* <Route exact path="/" element={<ProtectedRoute ><Dashboard/></ProtectedRoute>} /> */}
           {/* <Route exact path="/dashboard" element={<ProtectedRoute> <Dashboard /></ProtectedRoute>} /> */}
