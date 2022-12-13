@@ -13,6 +13,7 @@ import EllipseImg from '../../assets/images/Ellipse.png'
 import {RiNumber1, RiNumber2, RiNumber3, RiNumber4, RiNumber5} from "react-icons/ri"
 import {HiOutlineLightBulb} from 'react-icons/hi'
 import {BsChevronLeft, BsChevronRight} from 'react-icons/bs'
+import Right from "../../assets/images/right.png"
 import { useState } from "react";
 
 const Home = (props) => {
@@ -212,6 +213,35 @@ const Home = (props) => {
                         <h3 className="text-center font-bolder text-md">John Martin</h3>
                     </div>
                  </div>
+            </div>
+            <hr className="hr my-16 mx-32 font-bolder text-gray-800 border border-gray-300" />
+            <div className="justify-center">
+                <h3 className="text-3xl font-bold text-[#1e2c48] text-center">Pricing</h3>
+                <h2 className="text-4xl font-bold text-center py-12">
+                    Pay ₹100 to start playing Quiz
+                </h2>
+                <p className="text-center font-xs text-gray-500">
+                Please select and pay the One Time Fee of Rs.100 in order to play the Quiz
+                </p>
+
+                <div className='flex justify-center mt-6 mb-24'>
+                    <div className="w-72 h-80 border relative rounded-xl px-12">
+                        {/* <div> */}
+                            <div className='text-xl  mt-5 font-bold text-center' >One Time Fee</div>
+                            <div className='text-xl font-bold text-center mt-4'>₹100</div>
+                            <div className="text-[#828282] text-[12px] font-light text-center">Per Month / Year</div>
+                            <div>
+                                <div className='flex ml-2 mt-8 text-[15px] text-gray-500' ><img className="w-6 m-1 p-1" src={Right} alt="right" />100 Questions in 1 Quiz</div>
+                            </div>
+                            <div>
+                                <div className='flex ml-2 mt-2 text-[15px] text-gray-500' ><img className="w-6 m-1 p-1" src={Right} alt="right" />Exciting Rewards</div>
+                            </div>
+                            <div className="absolute bottom-4 text-center px-6">
+                              <Button title="Purchase" inverse={true}/>
+                            </div>
+                        {/* </div> */}
+                    </div>
+                </div>
             </div>
         </Skeleton>
     )
