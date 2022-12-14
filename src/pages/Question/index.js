@@ -4,12 +4,14 @@ import Button from "../../components/Button";
 import {TfiAlarmClock} from 'react-icons/tfi'
 import { useState} from "react";
 import {IoCaretBackOutline, IoCaretForwardOutline, IoPlayForwardSharp} from 'react-icons/io5'
+import CongratsModal from "../Modal/CongratsModal";
 
 
 const Question = (props) => {
     const [load, setLoad] = useState(false)
     const [start, setStart] = useState(1)
     const [id, setId] = useState(1)
+    const [open, setOpen] = useState(false)
     const [questions , setQuestions] = useState([
       {id : 1 , question : 'Who was the first man?', options : [
         {id : 'A', answer : 'Abraham' , checked : false},
@@ -89,7 +91,7 @@ const Question = (props) => {
 
                     <span className="float-right">
                         {
-                            questions.length >= start &&
+                            questions.length > start &&
                             <button className="bg-[#3D5890] text-white py-3 px-4 rounded inline-flex items-center mx-8" onClick={() => {
                                 setId(start + 1)
                                 setStart(start + 1)
@@ -107,10 +109,23 @@ const Question = (props) => {
                             </button>
                         }
 
-                        
+
+                        {
+                            questions.length === start &&
+                            <button className="bg-[#3D5890] text-white py-3 px-4 rounded inline-flex items-center mx-8" onClick={() => {
+                                setOpen(true)
+                            }}>
+                                <span className="text-white">Finish</span>
+                                <IoCaretForwardOutline className="w-4 h-4 ml-2"/>
+                            </button>
+                        }
                     </span>
                 </div>
             </div>
+            <CongratsModal 
+             open={open}
+             setOpen={() => setOpen(false)}
+            />
         </Skeleton>
     )
 }

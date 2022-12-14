@@ -15,6 +15,7 @@ import {HiOutlinePencilAlt} from 'react-icons/hi'
 function Profile() {
     const copyText='olivaquiz.referral-50641'
     const [tab , setTab] = useState(1)
+    const [open, setOpen] = useState(false)
      
      const copyToClipboard = () => {
         copy(copyText);
